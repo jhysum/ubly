@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.github.glomadrian.materialanimatedswitch.MaterialAnimatedSwitch;
 import com.neno0o.ubersdk.Activites.Authentication;
+import com.neno0o.ubersdk.Auth.Models.AccessToken;
 import com.neno0o.ubersdk.Endpoints.Models.UserProfile.User;
 import com.neno0o.ubersdk.Uber;
 import com.neno0o.ubersdk.Widgets.UberButton;
@@ -116,6 +117,11 @@ public class HomeActivity extends AppCompatActivity {
         if (requestCode == UBER_AUTHENTICATION) {
             // you have now access token
             // you can access resources on behalf of an Uber use
+
+            AccessToken accessToken = mUber.getAccessToken();
+            accessToken.setAccessTokenValue("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZXMiOlsicmVxdWVzdCJdLCJzdWIiOiIzNWY2YTVlMy1lYzRmLTQwN2MtYjYwZi00MTlkNzkwODNkNTUiLCJpc3MiOiJ1YmVyLXVzMSIsImp0aSI6IjBkMmUyN2ZhLThjOTctNGMzZi1hMTIxLTdiNzMyYTA5ZmJlNyIsImV4cCI6MTQ1OTI4ODUyMSwiaWF0IjoxNDU2Njk2NTIwLCJ1YWN0IjoiUkUzNHc0YnNxb3JoM1JoMnJWOEx2NXVOdXNkdktRIiwibmJmIjoxNDU2Njk2NDMwLCJhdWQiOiIwRkxVS0hNZTgzeDNPNThxX2VlSjl3WW1kRUE2QmR1MiJ9.klPGLK_3Bh9dSbQaOdYXqvLY9PbtlMiU0I-xFYtBqO3y1mdW_LYkvm1770cIFTZyIyPb9ycIl_fpQ2JnxeqHOim6R3Wo4uQmqktIb_XZhHO6f6NXydeGD6pa3Mh5iU2kaFyaCHgICa-P-YldA97D1TIGarsBkzAy-IV9XlRncdh6nUjp66tFQ4yFLgtzGIXzmSDcxjRjlh-a43FM5lTULLxBfteGygm61mSc1oRFRS1xEUKllPpPUAI4ZEBto0D2EO4SZEx0cbbKcHDFsmmPiikLjq5XWSE3m1Cqt_aY2xmWW5b4JXcO8X-hJnXFmMi70B3U_swd1dysI9Dl4odmNQ");
+            mUber.setAccessToken(accessToken);
+
             Log.d("jesse", "This is the uber obj" + mUber.getUberAPIService().toString());
             mUber.getUberAPIService().getMe(new Callback<User>() {
                 @Override

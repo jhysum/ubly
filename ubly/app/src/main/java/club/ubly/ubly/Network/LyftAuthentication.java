@@ -76,7 +76,7 @@ public class LyftAuthentication extends AppCompatActivity {
         Uri.Builder uriBuilder = Uri.parse("https://api.lyft.com/oauth/authorize").buildUpon();
         uriBuilder.appendQueryParameter("response_type", "code");
         uriBuilder.appendQueryParameter("client_id", "D35DoULU-GiX");
-        uriBuilder.appendQueryParameter("scope", "public");
+        uriBuilder.appendQueryParameter("scope", "public rides.request");
         uriBuilder.appendQueryParameter("state", "");
         return uriBuilder.build().toString().replace("%20", "+");
     }

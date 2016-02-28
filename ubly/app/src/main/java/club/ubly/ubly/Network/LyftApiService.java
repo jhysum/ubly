@@ -18,9 +18,9 @@ import rx.Observable;
  */
 public interface LyftApiService {
 
-    @POST("/rides/")
+    @POST("rides")
     Observable<RidePostResponse> postRide(@Body RideRequest request);
 
-    @POST("/rides/{ride_id}/cancel")
+    @POST("rides/{ride_id}/cancel")
     Observable<CancelPostResponse> cancelRide(@Path("ride_id") int rideId);
 }

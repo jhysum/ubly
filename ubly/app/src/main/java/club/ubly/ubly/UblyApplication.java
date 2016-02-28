@@ -3,6 +3,7 @@ package club.ubly.ubly;
 import android.app.Application;
 import android.util.Log;
 
+import com.neno0o.ubersdk.Auth.Models.AccessToken;
 import com.neno0o.ubersdk.Uber;
 
 import javax.inject.Inject;
